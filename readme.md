@@ -1,9 +1,12 @@
-# Backbone.js TodoMVC Example
+# Backbone.js with [dropboxDatastore](https://github.com/dmytroyarmak/Backbone.dropboxDatastore) TodoMVC Example
 
 > Backbone.js gives structure to web applications by providing models with key-value binding and custom events, collections with a rich API of enumerable functions, views with declarative event handling, and connects it all to your existing API over a RESTful JSON interface.
 
 > _[Backbone.js - backbonejs.org](http://backbonejs.org)_
 
+> Backbone.dropboxDatastore is quite simply a Dropbox Datastore adapter for Backbone. It's a drop-in replacement for Backbone.Sync() to handle saving to a [Dropbox Datastore](https://www.dropbox.com/developers/datastore).
+
+> _[Backbone.dropboxDatastore](https://github.com/dmytroyarmak/Backbone.dropboxDatastore)_
 
 ## Learning Backbone.js
 
@@ -26,4 +29,12 @@ Get help from other Backbone.js users:
 * [Google Groups mailing list](https://groups.google.com/forum/#!forum/backbonejs)
 * [Backbone.js on Twitter](http://twitter.com/documentcloud)
 
-_If you have other helpful links to share, or find any of the links above no longer work, please [let us know](https://github.com/tastejs/todomvc/issues)._
+## Learning Dropbox Datastore API
+
+Here are some links you may find helpful:
+
+* [Official page](https://www.dropbox.com/developers/datastore)
+* [JS tutorial for using Dropbox Datastore JS SDK](https://www.dropbox.com/developers/datastore/tutorial/js)
+* [Documentation for Datastore JS SDK](https://www.dropbox.com/developers/datastore/docs/js)
+* [Backbone.dropboxDatastore Documentation](http://documentup.com/dmytroyarmak/backbone.dropboxDatastore)
+
