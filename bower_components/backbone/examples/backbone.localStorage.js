@@ -8,11 +8,11 @@
    if (typeof define === "function" && define.amd) {
       // AMD. Register as an anonymous module.
       define(["underscore","backbone"], function(_, Backbone) {
-        // Use global variables if the locals is undefined.
+        // Use global variables if the locals are undefined.
         return factory(_ || root._, Backbone || root.Backbone);
       });
    } else {
-      // RequireJS isn't being used. Assume underscore and backbone is loaded in <script> tags
+      // RequireJS isn't being used. Assume underscore and backbone are loaded in <script> tags
       factory(_, Backbone);
    }
 }(this, function(_, Backbone) {
@@ -100,7 +100,7 @@ _.extend(Backbone.LocalStorage.prototype, {
   localStorage: function() {
     return localStorage;
   },
-  
+
   // fix for "illegal access" error on Android when JSON.parse is passed null
   jsonData: function (data) {
       return data && JSON.parse(data);
@@ -114,7 +114,7 @@ _.extend(Backbone.LocalStorage.prototype, {
 Backbone.LocalStorage.sync = window.Store.sync = Backbone.localSync = function(method, model, options) {
   var store = model.localStorage || model.collection.localStorage;
 
-  var resp, errorMessage, syncDfd = $.Deferred && $.Deferred(); //If $ is having Deferred - use it. 
+  var resp, errorMessage, syncDfd = $.Deferred && $.Deferred(); //If $ is having Deferred - use it.
 
   try {
 
@@ -141,30 +141,22 @@ Backbone.LocalStorage.sync = window.Store.sync = Backbone.localSync = function(m
   }
 
   if (resp) {
+    model.trigger("sync", model, resp, options);
     if (options && options.success)
-      if (Backbone.VERSION === "0.9.10") {
-        options.success(model, resp, options);
-      } else {
-        options.success(resp);
-      }
+      options.success(resp);
     if (syncDfd)
       syncDfd.resolve(resp);
 
   } else {
     errorMessage = errorMessage ? errorMessage
                                 : "Record Not Found";
-    
+
     if (options && options.error)
-      if (Backbone.VERSION === "0.9.10") {
-        options.error(model, errorMessage, options);
-      } else {
-        options.error(errorMessage);
-      }
-      
+      options.error(errorMessage);
     if (syncDfd)
       syncDfd.reject(errorMessage);
   }
-  
+
   // add compatibility with $.ajax
   // always execute callback for success and error
   if (options && options.complete) options.complete(resp);

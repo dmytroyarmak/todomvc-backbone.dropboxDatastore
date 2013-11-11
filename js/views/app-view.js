@@ -26,7 +26,7 @@ var app = app || {};
 
 		// At initialization we bind to the relevant events on the `Todos`
 		// collection, when items are added or changed. Kick things off by
-		// loading any preexisting todos that might be saved in *localStorage*.
+		// loading any preexisting todos that might be saved using *Dropbox Datastore API*.
 		initialize: function () {
 			this.allCheckbox = this.$('#toggle-all')[0];
 			this.$input = this.$('#new-todo');
@@ -39,7 +39,7 @@ var app = app || {};
 			this.listenTo(app.todos, 'filter', this.filterAll);
 			this.listenTo(app.todos, 'all', this.render);
 
-			// Suppresses 'add' events with {reset: true} and prevents the app view 
+			// Suppresses 'add' events with {reset: true} and prevents the app view
 			// from being re-rendered for every model. Only renders when the 'reset'
 			// event is triggered at the end of the fetch.
 			app.todos.fetch({reset: true});
@@ -103,7 +103,7 @@ var app = app || {};
 		},
 
 		// If you hit return in the main input field, create new **Todo** model,
-		// persisting it to *localStorage*.
+		// persisting it using *Dropbox Datasore API*.
 		createOnEnter: function (e) {
 			if (e.which !== ENTER_KEY || !this.$input.val().trim()) {
 				return;

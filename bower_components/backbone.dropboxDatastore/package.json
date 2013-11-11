@@ -1,0 +1,37 @@
+{
+  "name": "backbone.dropboxdatastore",
+  "description": "Backbone Dropbox Datastore API adapter",
+  "version": "0.4.0",
+  "keywords": [
+    "backbone",
+    "dropbox",
+    "Datastore",
+    "Datastore API"
+  ],
+  "author": "Dmytro Yarmak <dmytroyarmak@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dmytroyarmak/Backbone.dropboxDatastore.git"
+  },
+  "bugs": {
+    "url": "http://github.com/dmytroyarmak/Backbone.dropboxDatastore/issues",
+    "email": "dmytroyarmak@gmail.com"
+  },
+  "dependencies": {
+    "backbone": "~1.x.x",
+    "underscore": "~1.4.x"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.4",
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-jasmine": "~0.5.2",
+    "grunt-contrib-watch": "~0.5.3"
+  },
+  "main": "backbone.dropboxDatastore.js",
+  "scripts": {
+    "build": "grunt uglify",
+    "test": "grunt test"
+  }
+}
