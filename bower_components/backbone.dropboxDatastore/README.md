@@ -1,10 +1,17 @@
-# Backbone Dropbox Datastore Adapter v0.4.0
+# Backbone Dropbox Datastore Adapter v0.4.1
 
 [![Build Status](https://secure.travis-ci.org/dmytroyarmak/Backbone.dropboxDatastore.png?branch=master)](http://travis-ci.org/dmytroyarmak/Backbone.dropboxDatastore)
 
 Quite simply a Dropbox Datastore adapter for Backbone. It's a drop-in replacement for Backbone.Sync() to handle saving to a [Dropbox Datastore](https://www.dropbox.com/developers/datastore).
 
 [![Gittip](http://badgr.co/gittip/dmytroyarmak.png)](https://www.gittip.com/dmytroyarmak/)
+
+## Example Application
+
+There is an implementation of TodoMVC using backbone.dropboxDatastore as storage.
+
+* [Demo](https://dropboxdatastore.herokuapp.com/)
+* [Code in Github](https://github.com/dmytroyarmak/todomvc-backbone.dropboxDatastore)
 
 ## Usage
 
