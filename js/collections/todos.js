@@ -1,4 +1,4 @@
-/*global Backbone */
+/*global Backbone, $ */
 var app = app || {};
 
 (function () {
@@ -49,4 +49,11 @@ var app = app || {};
 
 	// Create our global collection of **Todos**.
 	app.todos = new Todos();
+
+	// Check sync status before close
+  $(window).bind('beforeunload', function () {
+    if (app.todos.dropboxDatastore.getStatus() === 'uploading') {
+      return 'You have pending changes that haven\'t been synchronized to the server.';
+    }
+  });
 })();

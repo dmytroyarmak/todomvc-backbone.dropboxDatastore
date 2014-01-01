@@ -138,7 +138,6 @@ var app = app || {};
 		},
 
 		updateSpin: function(status) {
-			console.log(this.$syncStatus);
 			if (status === 'uploading') {
 				this.$syncStatus.spin();
 			} else {
