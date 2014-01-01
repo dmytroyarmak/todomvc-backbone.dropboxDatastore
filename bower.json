@@ -6,6 +6,6 @@
     "underscore": "~1.4.4",
     "jquery": "~1.9.1",
     "todomvc-common": "~0.1.4",
-    "backbone.dropboxDatastore": "~0.4.1"
+    "backbone.dropboxDatastore": "~0.5.0"
   }
 }

@@ -16,6 +16,10 @@ var app = app || {};
 		// Save all of the todo items into `"todos"` table.
 		dropboxDatastore: new Backbone.DropboxDatastore('todos'),
 
+		initialize: function() {
+			this.dropboxDatastore.syncCollection(this);
+		},
+
 		// Filter down the list of all todo items that are finished.
 		completed: function () {
 			return this.filter(function (todo) {

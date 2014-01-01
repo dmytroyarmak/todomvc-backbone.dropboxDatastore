@@ -1,6 +1,6 @@
 {
   "name": "backbone.dropboxDatastore",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "main": "./backbone.dropboxDatastore.js",
   "dependencies": {
     "backbone": "~1.0.0"
@@ -10,13 +10,13 @@
     "jquery": "~2.0.3"
   },
   "homepage": "https://github.com/dmytroyarmak/Backbone.dropboxDatastore",
-  "_release": "0.4.1",
+  "_release": "0.5.0",
   "_resolution": {
     "type": "version",
-    "tag": "v0.4.1",
-    "commit": "57c2686889f9a911ffb24038dd2e930933698fdd"
+    "tag": "v0.5.0",
+    "commit": "7ac75313b2f12a142b4e09b11dc1bb06e2749959"
   },
   "_source": "git://github.com/dmytroyarmak/Backbone.dropboxDatastore.git",
-  "_target": "~0.4.1",
+  "_target": "~0.5.0",
   "_originalSource": "backbone.dropboxDatastore"
 }

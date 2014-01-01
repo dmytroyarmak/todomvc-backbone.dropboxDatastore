@@ -52,6 +52,7 @@ describe('Backbone.DropboxDatastore#_createTablePromise', function() {
     datastoreDefer.resolve(datastoreSpy);
     spyOn(Backbone.DropboxDatastore, 'getDatastore').andReturn(datastoreDefer);
     spyOn(dropboxDatastore, '_startListenToChangeStatus');
+    spyOn(dropboxDatastore, '_startListenToChangeRecords');
 
     resultPromise = dropboxDatastore._createTablePromise();
   });
@@ -64,8 +65,16 @@ describe('Backbone.DropboxDatastore#_createTablePromise', function() {
     expect(dropboxDatastore._startListenToChangeStatus).toHaveBeenCalledWith(datastoreSpy);
   });
 
+  it('call _startListenToChangeRecords', function() {
+    expect(dropboxDatastore._startListenToChangeRecords).toHaveBeenCalledWith(datastoreSpy);
+  });
+
   it('call getTable on datastore', function() {
     expect(datastoreSpy.getTable).toHaveBeenCalledWith('tableName');
+  });
+
+  it('store table in _table when resolve', function() {
+    expect(dropboxDatastore._table).toBe('tableMock');
   });
 
   it('return promise resolved by table', function() {
