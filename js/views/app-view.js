@@ -39,6 +39,8 @@ var app = app || {};
 			this.listenTo(app.todos, 'filter', this.filterAll);
 			this.listenTo(app.todos, 'all', this.render);
 
+			this.initializeSpin();
+
 			// Suppresses 'add' events with {reset: true} and prevents the app view
 			// from being re-rendered for every model. Only renders when the 'reset'
 			// event is triggered at the end of the fetch.
@@ -127,6 +129,21 @@ var app = app || {};
 					'completed': completed
 				});
 			});
+		},
+
+		initializeSpin: function() {
+			this.$syncStatus = this.$('#sync-status');
+			this.listenTo(app.todos.dropboxDatastore, 'change:status', this.updateSpin);
+			this.updateSpin(app.todos.dropboxDatastore.getStatus());
+		},
+
+		updateSpin: function(status) {
+			console.log(this.$syncStatus);
+			if (status === 'uploading') {
+				this.$syncStatus.spin();
+			} else {
+				this.$syncStatus.spin(false);
+			}
 		}
 	});
 })(jQuery);
